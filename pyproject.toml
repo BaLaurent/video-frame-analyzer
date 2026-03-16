@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=68.0", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video-frame-analyzer"
+version = "1.0.0"
+description = "Extract representative frames from videos for LLM context windows"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "BaLaurent"},
+]
+keywords = [
+    "video",
+    "frames",
+    "extraction",
+    "llm",
+    "ssim",
+    "phash",
+    "opencv",
+    "analysis",
+    "screenshot",
+    "keyframes",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
+dependencies = [
+    "opencv-python-headless>=4.8",
+    "scikit-image>=0.21",
+    "imagehash>=4.3",
+    "Pillow>=10.0",
+    "numpy>=1.24",
+    "tqdm>=4.65",
+]
+
+[project.urls]
+Homepage = "https://github.com/BaLaurent/video-frame-analyzer"
+Repository = "https://github.com/BaLaurent/video-frame-analyzer"
+Issues = "https://github.com/BaLaurent/video-frame-analyzer/issues"
+
+[project.scripts]
+vfa = "vfa.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1",
+    "mypy>=1.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["vfa*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true

@@ -4,9 +4,8 @@
     <strong>Extract representative frames from videos — built for LLM context windows.</strong>
   </p>
   <p align="center">
-    <a href="https://pypi.org/project/video-frame-analyzer/"><img alt="PyPI" src="https://img.shields.io/pypi/v/video-frame-analyzer"></a>
-    <a href="https://pypi.org/project/video-frame-analyzer/"><img alt="Python" src="https://img.shields.io/pypi/pyversions/video-frame-analyzer"></a>
-    <a href="https://github.com/BaLaurent/video-frame-analyzer/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/BaLaurent/video-frame-analyzer"></a>
+    <img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-blue">
+    <a href="https://github.com/BaLaurent/video-frame-analyzer/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/BaLaurent/video-frame-analyzer"></a>
   </p>
 </p>
 
@@ -28,13 +27,15 @@ VFA intelligently reduces a video to its **key frames** by comparing consecutive
 ### Installation
 
 ```bash
-pip install video-frame-analyzer
+git clone https://github.com/BaLaurent/video-frame-analyzer.git
+cd video-frame-analyzer
+pip install .
 ```
 
 Or with [pipx](https://pipx.pypa.io/) (recommended for CLI usage):
 
 ```bash
-pipx install video-frame-analyzer
+pipx install git+https://github.com/BaLaurent/video-frame-analyzer.git
 ```
 
 ### Basic Usage
